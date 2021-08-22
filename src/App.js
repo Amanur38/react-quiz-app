@@ -1,14 +1,12 @@
 import React from 'react';
 import { HashRouter as Router } from "react-router-dom";
 import {PrivateRoute, RedirectLoggedIn} from "./Components/AuthRouter";
-
 import Login from './Components/Login';
 import Questions from './Components/Questions';
 import AddQuestion from './Components/Questions/AddQuestion';
 import Answer from './Components/Answers/Answer';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   return (
