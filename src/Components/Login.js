@@ -18,7 +18,7 @@ const Login = () => {
   };
 
   const onSubmitLoginForm = (e) => {
-    e.preventDefault();
+    if(allValues.userName !== "" && allValues.password !== "") e.preventDefault();
     const findUser = Constants.USERS.filter((user) => {
       return user.userName === allValues.userName;
     });
@@ -41,11 +41,11 @@ const Login = () => {
     <Container>
       <Row className="justify-content-center">
         <Col md={6} className="mt-4 text-align-left">
-          {allValues.isError ? (
-            <p className="alert alert-danger">Invalid login credentials</p>
-          ) : null}
           <Form onSubmit={onSubmitLoginForm}>
             <Form.Label className="header-text">Login</Form.Label>
+            {allValues.isError ? (
+              <p className="alert alert-danger">Invalid login credentials</p>
+            ) : null}
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>User Name</Form.Label>
               <Form.Control
@@ -54,6 +54,7 @@ const Login = () => {
                 type="text"
                 placeholder="Enter user name"
                 list="userNameList"
+                required
               />
             </Form.Group>
 
@@ -64,6 +65,7 @@ const Login = () => {
                 onChange={onChangeFormValue}
                 type="password"
                 placeholder="Password"
+                required
               />
             </Form.Group>
             <div className="d-flex justify-content-center m-4">
@@ -74,10 +76,10 @@ const Login = () => {
           </Form>
         </Col>
       </Row>
-      {/* Input fields datalist for easier to select user and password */}
+      {/* Input fields datalist for easier to select user */}
       <datalist id="userNameList">
-        <option value={Constants.USERS[0].userName}/>
-        <option value={Constants.USERS[1].userName}/>
+        <option value={Constants.USERS[0].userName} />
+        <option value={Constants.USERS[1].userName} />
       </datalist>
     </Container>
   );

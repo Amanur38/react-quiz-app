@@ -49,8 +49,6 @@ const EditQuestion = (props) => {
     ) {
       e.preventDefault();
       let questionList = window.localStorage.getItem(Constants.QUESTION_LIST);
-      console.log("🚀 ~ file: QuestionEditModal.js ~ line 62 ~ EditQuestion ~ questionList", questionList)
-      let id = Date.now();
       const question = {
         id: props.payload.id,
         questionText: questionWithOptions.question,
