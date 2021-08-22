@@ -1,0 +1,19 @@
+.App {
+  /* text-align: center; */
+}
+
+.question-option {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.button-wrapper button {
+  margin: 5px;
+}
+
+.header-text {
+  font-size: 30px !important;
+  margin-top: 15%;
+}
